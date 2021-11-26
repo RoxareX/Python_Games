@@ -1,2 +1,3 @@
-# Python Games
-- Here are some games i have created with python.
+# Space Invaders
+- kinda wierd but still playeble
+- make sure to put everything in the same folder
