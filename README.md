@@ -1,3 +1,3 @@
-# Wierd calculator
-- Calculates from mm to mm2, cm2, m3
+# You're in a spaceship
+- You dodge the obsticles with your ship
 
