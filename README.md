@@ -1,3 +1,3 @@
 # Wierd calculator
-- Calculates from mm to mm,cm2,m3
+- Calculates from mm to mm2, cm2, m3
 
