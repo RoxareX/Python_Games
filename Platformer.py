@@ -456,10 +456,10 @@ while True:  # Game loop -------------------------------------------------------
 
     # Particles -------------------------------------------------------------------------------------------------------#
     # particles.draw(screen, scroll)
-    pygame.draw.rect(display, (255, 0, 0), weapon_hitbox, 2)
-    if enemy_alive == True:
-        pygame.draw.rect(display, (0, 255, 0), enemy[1].obj.rect, 2)
-    pygame.draw.rect(display, (0, 100, 100), player.obj.rect, 2)
+    # pygame.draw.rect(display, (255, 0, 0), weapon_hitbox, 2)
+    # if enemy_alive == True:
+    #   pygame.draw.rect(display, (0, 255, 0), enemy[1].obj.rect, 2)
+    # pygame.draw.rect(display, (0, 100, 100), player.obj.rect, 2)
 
     for event in pygame.event.get():  # Event loop --------------------------------------------------------------------#
         if event.type == pygame.QUIT:
@@ -489,7 +489,6 @@ while True:  # Game loop -------------------------------------------------------
             if event.key == pygame.K_r:
                 framerate = 60
             if event.key == pygame.K_ESCAPE:
-                os.startfile('F:\Pycharm\Game Bot\main.py')
                 exit()
             if event.key == pygame.K_o:
                 pygame.mixer.music.fadeout(1000)
