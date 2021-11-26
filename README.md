@@ -1,2 +1,2 @@
-# Python Games
+# Creates a pyramid in console forever
 
