@@ -1,2 +1,5 @@
-# Snake Game
-- Fast and simple
+# Thing needed
+- install python
+- install pygame
+
+should work now.
