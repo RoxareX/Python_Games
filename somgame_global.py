@@ -37,6 +37,7 @@ radius_enemy_y = random.randint(19, 23)
 # Colorkeys
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
+PINK = (200, 0, 120)
 
 # Player
 player_img = pygame.image.load(os.path.join(os.path.dirname(__file__), "Assets", "player.png"))
@@ -97,7 +98,7 @@ startgui.set_alpha(150) # 0 fully transparent and 255 fully opaque
 # Game start --------------------------------------------------------------------------------
 
 # Game version
-game_version = "0.2"
+game_version = "0.3"
 versionfont = pygame.font.SysFont(None, 30)
 version = versionfont.render("", True, (0, 0, 0))
 
@@ -129,7 +130,7 @@ class Bullet(object):
         self.y = y
         self.height = 4
         self.width = 70
-        self.color = WHITE
+        self.color = PINK
         self.facing = facing
         self.vel = 8 * facing
         # self.rect = pygame.Rect((self.x, self.y), (self.width, self.height))
@@ -255,7 +256,7 @@ class AarreCar(object):
         self.rect = self.image.get_rect()
 
         self.x = x
-        self.y = 444
+        self.y = 500
         self.vel = 6
         self.control = False
         self.move_right = False 
@@ -412,7 +413,7 @@ while run:
     version = versionfont.render("Version: " + game_version, True, (22, 219, 219))
     if player.health < 1:
         gameover = True
-    if bg_x < -700:
+    if bg_x < -1400:
         bg_x = 0
     if start == True:
         if gameover == False:
@@ -492,6 +493,7 @@ while run:
                     pregenemies.pop(pregenemies.index(pregenemy))
                     enemyparticle.add_particles(enemy.pos[0], enemy.pos[1], random.randint(-5, 5), random.randint(-3, 3))
                     player.health -= 1
+                    player_img = player_hurt_img
                     collision_time = pygame.time.get_ticks()
 
             for baby in babies:
@@ -499,10 +501,10 @@ while run:
                     babies.pop(babies.index(baby))
                     collision_time2 = pygame.time.get_ticks()
                     player.health -= 1
-                    playerhurtparticle.add_particles(player.pos[0], player.pos[1] - 20, random.randint(-5, 5), random.randint(-3, 3))
-                    playerhurtparticle.add_particles(player.pos[0], player.pos[1] - 20, random.randint(-5, 5), random.randint(-3, 3))
-                    playerhurtparticle.add_particles(player.pos[0], player.pos[1] - 20, random.randint(-5, 5), random.randint(-3, 3))
                     player_img = player_hurt_img
+                    playerhurtparticle.add_particles(player.pos[0], player.pos[1] - 20, random.randint(-5, 5), random.randint(-3, 3))
+                    playerhurtparticle.add_particles(player.pos[0], player.pos[1] - 20, random.randint(-5, 5), random.randint(-3, 3))
+                    playerhurtparticle.add_particles(player.pos[0], player.pos[1] - 20, random.randint(-5, 5), random.randint(-3, 3))
                 
                 if current_time - collision_time > 1000:
                     player_img = pygame.image.load(os.path.join(os.path.dirname(__file__), "Assets", "player.png"))
@@ -694,7 +696,7 @@ while run:
         restarttext = restartfont.render("Click anywhere to restart the game", True, (WHITE))
 
     enemyparticle.emit((255,201,158))
-    playerparticle.emit((pygame.Color("White")))
+    playerparticle.emit(PINK)
     playerhurtparticle.emit((166,16,30))
     pygame.display.update()
     clock.tick(60)
