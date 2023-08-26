@@ -1,9 +1,12 @@
 # PPShooter
 
+## Version 2.0
+
 - Inspired by a friend.
 - Graphics created by an other friend.
 - I have worked on this game for too long.
 
-- Here are some games i have created with python.
-- All the games require python and might need pygame as well so make sure to get them.
-- All the games here is buggy because they are old and unfinished.
+## Version 3.0
+
+- Complete graphics overhaul
+- graphics were made with blender even tho its 2d.
